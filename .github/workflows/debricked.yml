@@ -1,0 +1,10 @@
+name: Vulnerability scan
+on: [push, pull_request]
+jobs:
+    vulnerabilities-scan:
+        runs-on: UBUNTU-LATEST
+    steps:
+    - uses: ACTIONS/CHECKOUT@V2
+    - uses: DEBRICKED/ACTIONS/SCAN@V1
+    env:
+        DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
