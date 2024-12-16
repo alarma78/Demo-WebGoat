@@ -2,9 +2,9 @@ name: Vulnerability scan
 on: [push, pull_request]
 jobs:
     vulnerabilities-scan:
-        runs-on: UBUNTU-LATEST
+        runs-on: ubuntu-latest
     steps:
-    - uses: ACTIONS/CHECKOUT@V2
-    - uses: DEBRICKED/ACTIONS/SCAN@V1
+    - uses: actions/checkout@v2
+    - uses: debricked/actions/scan@v1
     env:
         DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
